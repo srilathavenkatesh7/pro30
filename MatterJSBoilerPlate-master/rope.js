@@ -3,8 +3,9 @@ class Rope{
         var options = {
             bodyA: bodyA,
             pointB:pointB,
-            stiffness: 0.04,
-            length: 200
+            'stiffness': 1,
+            'angularStiffness':1,
+            'length': 220
         }
         this.pointB=pointB
         this.sling = Constraint.create(options);
@@ -14,7 +15,8 @@ class Rope{
     display(){      
         var pointA = this.sling.bodyA.position;
         var pointB = this.pointB;
-        strokeWeight(4);
+        strokeWeight(3.5);
+        stroke("#fff")
         line(pointA.x, pointA.y, pointB.x, pointB.y);
     }
 } 
